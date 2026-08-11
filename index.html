@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Na Casa da Deise — Casa de temporada à beira da represa | Rio dos Cedros, SC</title>
+<meta name="description" content="Casa inteira para até 24 hóspedes na Barragem Rio Bonito, Rio dos Cedros/SC. 6 suítes, área gourmet, sinuca, caiaques e rampa para jet ski. Fotos, valores e datas disponíveis.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Na Casa da Deise — Rio dos Cedros, SC">
+<meta property="og:description" content="Um refúgio à beira da represa para até 24 hóspedes. 6 suítes, área gourmet, sinuca, caiaques e acesso à água.">
+<meta property="og:image" content="fotos/capa.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#2d4f1d">
+<link rel="icon" href="fotos/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script>
+/* =========================================================================
+   CONFIGURAÇÃO — edite APENAS este bloco.
+   ========================================================================= */
+const CONFIG = {
+
+  // WhatsApp: 55 + DDD + número (9 dígitos), só dígitos.
+  // (47) 9 9948-7650  ->  55 47 99948-7650
+  whatsapp: "5547999487650",
+
+  whatsappMensagem: "Olá! Vi o site da Casa da Deise e gostaria de saber sobre disponibilidade.",
+
+  instagram: "nacasada.deise",
+
+  endereco: "Barragem Rio Bonito, Rio dos Cedros — SC",
+  mapaBusca: "Barragem Rio Bonito, Rio dos Cedros - SC",
+  // Para o botão "Como chegar": troque pelo link exato da casa
+  // (Google Maps -> achar a casa -> Compartilhar -> copiar link).
+  mapaLink: "https://www.google.com/maps/search/Barragem+Rio+Bonito,+Rio+dos+Cedros+-+SC",
+
+  // Vídeo de fundo do topo (deixe "" para usar só a foto)
+  videoCapa: "fotos/hero.mp4",
+  videoPoster: "fotos/hero-poster.jpg",
+
+  selos: ["Até 24 hóspedes", "6 suítes", "8 banheiros", "Pé na água"],
+
+  numeros: [
+    { n: 24, rotulo: "hóspedes" },
+    { n: 6,  rotulo: "suítes" },
+    { n: 8,  rotulo: "banheiros" },
+    { n: 12, rotulo: "vagas de carro" }
+  ],
+
+  fotos: [
+    { arquivo: "fotos/01-fachada-gramado.jpg",      legenda: "A casa à beira da represa" },
+    { arquivo: "fotos/02-vale-aereo.jpg",           legenda: "O vale e a represa vistos do alto" },
+    { arquivo: "fotos/03-represa.jpg",              legenda: "A represa em frente à casa" },
+    { arquivo: "fotos/04-sala.jpg",                 legenda: "Sala de estar com lareira e TV 50”" },
+    { arquivo: "fotos/05-sinuca.jpg",               legenda: "Sala de jogos com mesa de sinuca" },
+    { arquivo: "fotos/06-jantar.jpg",               legenda: "Mesa que acomoda o grupo inteiro" },
+    { arquivo: "fotos/07-cozinha-lenha.jpg",        legenda: "Cozinha com fogão a lenha" },
+    { arquivo: "fotos/08-cozinha.jpg",              legenda: "Cozinha completa e equipada" },
+    { arquivo: "fotos/09-suite-vista.jpg",          legenda: "Suíte com sacada e vista para o lago" },
+    { arquivo: "fotos/10-suite-casal-solteiro.jpg", legenda: "Suíte com cama de casal e de solteiro" },
+    { arquivo: "fotos/11-suite-casal.jpg",          legenda: "Suíte de casal" },
+    { arquivo: "fotos/12-banheiro.jpg",             legenda: "Banheiro com chuveiro de aquecimento a gás" },
+    { arquivo: "fotos/13-hall.jpg",                 legenda: "Hall de entrada" },
+    { arquivo: "fotos/14-jetski.jpg",               legenda: "Rampa exclusiva para hóspedes com jet ski" },
+    { arquivo: "fotos/15-caiaques.jpg",             legenda: "Caiaques e pedalinho à disposição" },
+    { arquivo: "fotos/16-estacionamento.jpg",       legenda: "Estacionamento para até 12 carros" },
+    { arquivo: "fotos/17-fachada-ipe.jpg",          legenda: "A casa em dia de sol" }
+  ],
+
+  comodidades: [
+    { icone: "cama", titulo: "Suítes", itens: [
+      "6 suítes para até 24 pessoas",
+      "4 suítes com vista para o lago",
+      "1 suíte com vista lateral",
+      "1 suíte com vista para a montanha",
+      "8 banheiros no total",
+      "Chuveiros com aquecimento a gás"
+    ]},
+    { icone: "panela", titulo: "Cozinha e área gourmet", itens: [
+      "Cozinha completa e equipada",
+      "Geladeira duplex e cervejeira",
+      "Fogão a gás, forno elétrico e micro-ondas",
+      "Air fryer e utensílios completos",
+      "Churrasqueira",
+      "Fogão a lenha"
+    ]},
+    { icone: "tv", titulo: "Sala e lazer", itens: [
+      "Sala com TV 50”",
+      "Sala de jogos com mesa de sinuca",
+      "Lareira",
+      "Wi-Fi disponível",
+      "Ambientes amplos para descanso e convivência"
+    ]},
+    { icone: "onda", titulo: "Área externa e água", itens: [
+      "Acesso direto à represa",
+      "2 caiaques e 1 pedalinho",
+      "Rampa exclusiva para hóspedes com jet ski",
+      "Área de fogo e área verde",
+      "Varanda ampla com vista para o lago",
+      "Balanço e rede para relaxar"
+    ]}
+  ],
+
+  gerais: [
+    { icone: "carro", txt: "Estacionamento para até 12 carros" },
+    { icone: "pata",  txt: "Pet friendly para pets de pequeno porte" },
+    { icone: "acess", txt: "Banheiro adaptado e acessibilidade para cadeirantes" },
+    { icone: "plug",  txt: "Ponto para carregamento de carro elétrico" },
+    { icone: "wifi",  txt: "Wi-Fi em toda a casa" }
+  ],
+
+  valores: [
+    { periodo: "Final de semana", valor: "R$ 4.800", obs: "Sexta a domingo, casa inteira" },
+    { periodo: "Feriados prolongados", valor: "Sob consulta", obs: "Valores diferenciados" }
+  ],
+
+  reserva: [
+    "50% do valor no ato da reserva",
+    "50% no dia anterior ao check-in",
+    "Check-in na sexta-feira, a partir das 14h",
+    "Check-out no domingo, até as 17h"
+  ],
+
+  regras: [
+    "A casa é alugada por inteiro, para um único grupo",
+    "Pets de pequeno porte são bem-vindos — avise na reserva",
+    "Silêncio a partir das 22h, respeitando os vizinhos",
+    "Uso da represa e dos equipamentos por conta e risco dos hóspedes",
+    "Deixar a casa organizada e o lixo separado na saída"
+  ],
+
+  regiao: [
+    { nome: "Barragem Rio Bonito", desc: "A casa fica na beira, com acesso próprio à água" },
+    { nome: "Cachoeiras de Rio dos Cedros", desc: "Várias quedas d'água a poucos minutos de carro" },
+    { nome: "Centro de Rio dos Cedros", desc: "Mercados, padarias e restaurantes" },
+    { nome: "Timbó e Pomerode", desc: "Cultura germânica, cervejarias e gastronomia por perto" }
+  ],
+
+  /* CALENDÁRIO — planilha "Reservas — Na Casa da Deise" (veja LEIA-ME.md).
+     Só funciona depois que a planilha estiver compartilhada como
+     "Qualquer pessoa com o link — Leitor".                              */
+  planilhaCSV: "https://docs.google.com/spreadsheets/d/1FJf7jB_bBb5aNo71zi-wTfzRE0VRLJYMOZGueqY0Wq8/gviz/tq?tqx=out:csv",
+  ocupadoManual: [],
+  mesesNoCalendario: 8
+};
+</script>
+
+<style>
+:root{
+  --verde:#2d4f1d;
+  --verde-md:#456b33;
+  --verde-cl:#84a06d;
+  --rosa:#b0357f;
+  --areia:#f7f3ec;
+  --areia-2:#efe8db;
+  --branco:#fffdfa;
+  --texto:#2a2823;
+  --suave:#6d6559;
+  --borda:#e4dbcc;
+  --ocupado:#c2607d;
+  --sombra:0 1px 2px rgba(42,40,35,.05), 0 12px 32px rgba(42,40,35,.08);
+  --sombra-alta:0 20px 48px rgba(42,40,35,.16);
+  --raio:18px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--areia); color:var(--texto);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body.travado{overflow:hidden}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif; font-weight:600; line-height:1.14; margin:0}
+a{color:var(--verde)}
+img{max-width:100%; display:block}
+.container{width:min(1120px,92vw); margin:0 auto}
+section{padding:88px 0; scroll-margin-top:74px; position:relative}
+section.alt{background:var(--branco)}
+.rotulo{font-size:.72rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--rosa); margin-bottom:12px}
+h2{font-size:clamp(1.8rem,4.2vw,2.6rem); margin-bottom:12px; letter-spacing:-.015em}
+.sub{color:var(--suave); margin:0 0 42px; max-width:62ch}
+
+/* ---------------- abertura ---------------- */
+#abertura{
+  position:fixed; inset:0; z-index:999; background:var(--areia);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:22px;
+  transition:opacity .7s var(--ease), visibility .7s;
+  /* rede de segurança: some sozinha mesmo se o JS não rodar */
+  animation:sumirAbertura .7s var(--ease) 2.2s forwards;
+}
+#abertura img{width:min(210px,44vw); opacity:0; transform:scale(.9); animation:surgir 1s var(--ease) .1s forwards}
+#abertura .risco{width:0; height:2px; background:var(--verde-cl); border-radius:2px; animation:crescer 1s var(--ease) .5s forwards}
+body.pronto #abertura{opacity:0; visibility:hidden}
+@keyframes surgir{to{opacity:1; transform:scale(1)}}
+@keyframes crescer{to{width:min(150px,32vw)}}
+@keyframes sumirAbertura{to{opacity:0; visibility:hidden}}
+
+/* ---------------- nav ---------------- */
+nav{position:fixed; top:0; left:0; right:0; z-index:60; transition:background .35s, box-shadow .35s, border-color .35s; border-bottom:1px solid transparent}
+nav.solida{background:rgba(247,243,236,.94); backdrop-filter:blur(12px); border-bottom-color:var(--borda); box-shadow:0 2px 20px rgba(0,0,0,.05)}
+.nav-in{display:flex; align-items:center; justify-content:space-between; height:70px; gap:18px}
+.marca{display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0}
+.marca img{height:46px; width:auto; transition:height .35s}
+.marca span{font-family:'Fraunces',serif; font-weight:700; font-size:1.02rem; white-space:nowrap; color:#fff; text-shadow:0 1px 12px rgba(0,0,0,.5); transition:color .35s, text-shadow .35s}
+nav.solida .marca span{color:var(--verde); text-shadow:none}
+nav.solida .marca img{height:40px}
+.nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0}
+.nav-links a{position:relative; color:rgba(255,255,255,.92); text-decoration:none; font-size:.92rem; font-weight:500; white-space:nowrap; text-shadow:0 1px 10px rgba(0,0,0,.45); transition:color .35s, text-shadow .35s}
+nav.solida .nav-links a{color:var(--suave); text-shadow:none}
+.nav-links a::after{content:''; position:absolute; left:0; right:100%; bottom:-5px; height:1.5px; background:currentColor; transition:right .3s var(--ease); opacity:.8}
+.nav-links a:hover::after{right:0}
+nav.solida .nav-links a:hover{color:var(--verde)}
+@media(max-width:900px){ .nav-links{display:none} .marca span{display:none} }
+
+/* ---------------- capa ---------------- */
+header.capa{
+  position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:flex-end; color:#fff; overflow:hidden;
+  background:#22391a center/cover no-repeat; background-image:url('fotos/capa.jpg');
+}
+.capa-video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 62%; opacity:0; transition:opacity 1.4s var(--ease)}
+@media(max-aspect-ratio:1/1){ .capa-video{object-position:center 55%} }
+.capa-video.visivel{opacity:1}
+.capa-veu{position:absolute; inset:0; background:
+  linear-gradient(180deg, rgba(16,26,12,.55) 0%, rgba(16,26,12,.15) 32%, rgba(16,26,12,.55) 72%, rgba(16,26,12,.92) 100%)}
+.capa-txt{position:relative; z-index:2; padding:0 0 92px}
+.capa h1{font-size:clamp(2.5rem,7.6vw,4.6rem); color:#fff; letter-spacing:-.025em}
+.capa h1 em{font-style:italic; font-weight:400}
+.capa p.tag{font-size:clamp(1.02rem,2.3vw,1.26rem); opacity:.95; margin:18px 0 0; max-width:40ch; font-weight:300}
+.selos{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px}
+.selo{background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.32); padding:8px 17px; border-radius:999px; font-size:.87rem; backdrop-filter:blur(6px)}
+.botoes{display:flex; flex-wrap:wrap; gap:12px; margin-top:34px}
+.btn{display:inline-flex; align-items:center; gap:9px; padding:15px 29px; border-radius:999px; font-weight:600; font-size:.97rem; text-decoration:none; border:none; cursor:pointer; transition:transform .2s var(--ease), box-shadow .2s var(--ease), background .2s}
+.btn:hover{transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.btn-zap{background:#25D366; color:#0b2016}
+.btn-vazio{background:rgba(255,255,255,.06); color:#fff; border:1.5px solid rgba(255,255,255,.55); backdrop-filter:blur(4px)}
+.btn-vazio:hover{background:rgba(255,255,255,.16)}
+.btn-verde{background:var(--verde); color:#fff}
+.btn-verde:hover{background:var(--verde-md)}
+
+/* entrada escalonada da capa (independe do JS) */
+.capa .anim{opacity:0; transform:translateY(26px); animation:subir .9s var(--ease) forwards}
+.capa .a1{animation-delay:1.25s}
+.capa .a2{animation-delay:1.40s}
+.capa .a3{animation-delay:1.55s}
+.capa .a4{animation-delay:1.70s}
+body.pronto .capa .a1{animation-delay:.15s}
+body.pronto .capa .a2{animation-delay:.30s}
+body.pronto .capa .a3{animation-delay:.45s}
+body.pronto .capa .a4{animation-delay:.60s}
+@keyframes subir{to{opacity:1; transform:none}}
+
+.rolar{position:absolute; left:50%; bottom:26px; transform:translateX(-50%); z-index:3; color:rgba(255,255,255,.8); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0; animation:aparecer .9s var(--ease) 2.1s forwards}
+body.pronto .rolar{animation-delay:1s}
+@keyframes aparecer{to{opacity:1}}
+.rolar i{display:block; width:1px; height:34px; background:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.85)); animation:pulsar 2s ease-in-out infinite}
+@keyframes pulsar{0%,100%{transform:scaleY(.5); opacity:.4} 50%{transform:scaleY(1); opacity:1}}
+
+/* ---------------- reveal ---------------- */
+.rev{opacity:0; transform:translateY(30px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
+.rev.on{opacity:1; transform:none}
+.rev.d1{transition-delay:.08s} .rev.d2{transition-delay:.16s} .rev.d3{transition-delay:.24s} .rev.d4{transition-delay:.32s}
+
+/* ---------------- intro ---------------- */
+.intro{text-align:center; padding-top:96px}
+.folha{width:34px; margin:0 auto 26px; color:var(--verde-cl)}
+.intro p.lead{font-family:'Fraunces',serif; font-size:clamp(1.35rem,3.4vw,2.1rem); line-height:1.4; max-width:22ch; margin:0 auto; color:var(--verde)}
+.intro p.lead b{color:var(--rosa); font-weight:600; font-style:italic}
+.numeros{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:24px; margin-top:56px}
+.num strong{display:block; font-family:'Fraunces',serif; font-size:clamp(2.2rem,5vw,2.9rem); color:var(--verde); line-height:1}
+.num span{font-size:.85rem; color:var(--suave); letter-spacing:.05em}
+
+/* ---------------- galeria ---------------- */
+.galeria{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px}
+.galeria figure{margin:0; position:relative; overflow:hidden; border-radius:var(--raio); cursor:zoom-in; background:var(--areia-2); aspect-ratio:4/3; box-shadow:var(--sombra); transition:box-shadow .35s var(--ease), transform .35s var(--ease)}
+.galeria figure:hover{box-shadow:var(--sombra-alta); transform:translateY(-4px)}
+.galeria img{width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease)}
+.galeria figure:hover img{transform:scale(1.07)}
+.galeria figcaption{position:absolute; inset:auto 0 0 0; padding:30px 16px 14px; color:#fff; font-size:.87rem; background:linear-gradient(transparent,rgba(0,0,0,.75)); opacity:0; transform:translateY(8px); transition:opacity .3s, transform .3s}
+.galeria figure:hover figcaption{opacity:1; transform:none}
+.galeria figure:first-child{grid-column:span 2; grid-row:span 2; aspect-ratio:auto}
+@media(max-width:660px){ .galeria figure:first-child{grid-column:span 1; grid-row:span 1; aspect-ratio:4/3} }
+
+/* ---------------- lightbox ---------------- */
+#lb{position:fixed; inset:0; background:rgba(14,16,11,.96); z-index:200; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s}
+#lb.on{opacity:1; visibility:visible}
+#lb img{max-width:92vw; max-height:82vh; border-radius:10px; box-shadow:0 30px 80px rgba(0,0,0,.6); transition:opacity .2s}
+#lb button{background:none; border:none; color:#fff; cursor:pointer}
+#lb .fechar{position:absolute; top:14px; right:22px; font-size:2.4rem; line-height:1; opacity:.8}
+#lb .seta{position:absolute; top:50%; transform:translateY(-50%); font-size:2.9rem; padding:12px 20px; opacity:.6; transition:opacity .2s}
+#lb .seta:hover, #lb .fechar:hover{opacity:1}
+#lb .ant{left:2px} #lb .prox{right:2px}
+#lb .cap{position:absolute; bottom:22px; left:0; right:0; text-align:center; color:#fff; font-size:.92rem; opacity:.82}
+
+/* ---------------- cartões ---------------- */
+.grade{display:grid; grid-template-columns:repeat(auto-fit,minmax(288px,1fr)); gap:22px}
+.cartao{background:var(--branco); border:1px solid var(--borda); border-radius:var(--raio); padding:30px; box-shadow:var(--sombra); transition:transform .35s var(--ease), box-shadow .35s var(--ease)}
+.cartao:hover{transform:translateY(-4px); box-shadow:var(--sombra-alta)}
+section.alt .cartao{background:var(--areia)}
+.cartao h3{font-size:1.18rem; margin-bottom:16px; color:var(--verde); display:flex; align-items:center; gap:11px}
+.cartao h3 svg{width:24px; height:24px; color:var(--rosa); flex-shrink:0}
+.lista{list-style:none; margin:0; padding:0}
+.lista li{padding:8px 0 8px 26px; position:relative; font-size:.95rem}
+.lista li::before{content:''; position:absolute; left:4px; top:16px; width:7px; height:7px; border-radius:50%; background:var(--verde-cl)}
+.lista.linhas li{border-bottom:1px solid var(--borda)}
+.lista.linhas li:last-child{border-bottom:none}
+.lista.rosa li::before{background:var(--rosa)}
+
+.chips{display:flex; flex-wrap:wrap; gap:11px; margin-top:32px}
+.chip{display:inline-flex; align-items:center; gap:9px; background:var(--branco); border:1px solid var(--borda); border-radius:999px; padding:10px 20px; font-size:.9rem; box-shadow:var(--sombra); transition:transform .25s var(--ease)}
+.chip:hover{transform:translateY(-2px)}
+.chip svg{width:17px; height:17px; color:var(--verde-md)}
+section.alt .chip{background:var(--areia)}
+
+/* ---------------- faixa destaque ---------------- */
+.faixa{background:var(--verde); color:#fff; padding:0; overflow:hidden; position:relative}
+.faixa-in{display:grid; grid-template-columns:1.05fr 1fr; align-items:stretch; min-height:340px}
+.faixa-txt{padding:64px 0; padding-right:56px; display:flex; flex-direction:column; justify-content:center}
+.faixa h2{color:#fff}
+.faixa .rotulo{color:#c8dcb8}
+.faixa p{opacity:.88; margin:6px 0 0; max-width:44ch}
+.faixa-img{position:relative; margin-right:calc((100vw - min(1120px,92vw)) / -2 + 0px)}
+.faixa-img img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+@media(max-width:880px){
+  .faixa-in{grid-template-columns:1fr; min-height:0}
+  .faixa-txt{padding:56px 0 40px; padding-right:0}
+  .faixa-img{position:relative; height:260px; margin:0 calc((100vw - min(1120px,92vw)) / -2)}
+}
+
+/* ---------------- valores ---------------- */
+.preco-destaque{display:flex; flex-wrap:wrap; align-items:baseline; gap:12px}
+.preco-destaque strong{font-family:'Fraunces',serif; font-size:clamp(2.3rem,6.5vw,3.2rem); color:var(--verde); line-height:1}
+.preco-destaque span{color:var(--suave)}
+table{width:100%; border-collapse:collapse; font-size:.95rem; margin-top:18px}
+th,td{text-align:left; padding:13px 8px; border-bottom:1px solid var(--borda)}
+th{font-size:.71rem; letter-spacing:.1em; text-transform:uppercase; color:var(--suave); font-weight:600}
+td.preco{font-weight:600; color:var(--verde); white-space:nowrap}
+td.obs{color:var(--suave); font-size:.87rem}
+.nota{font-size:.87rem; color:var(--suave); margin-top:16px}
+
+/* ---------------- calendário ---------------- */
+.legenda{display:flex; flex-wrap:wrap; gap:20px; margin-bottom:28px; font-size:.88rem}
+.legenda span{display:flex; align-items:center; gap:8px}
+.bolinha{width:15px; height:15px; border-radius:5px; display:inline-block}
+.b-livre{background:var(--branco); border:1.5px solid var(--borda)}
+.b-ocupado{background:var(--ocupado)}
+.b-passado{background:var(--areia-2)}
+#calendario{display:grid; grid-template-columns:repeat(auto-fill,minmax(248px,1fr)); gap:22px}
+.mes{background:var(--branco); border:1px solid var(--borda); border-radius:var(--raio); padding:18px; box-shadow:var(--sombra)}
+section.alt .mes{background:var(--areia)}
+.mes h4{margin:0 0 14px; font-size:1rem; text-align:center; text-transform:capitalize; color:var(--verde)}
+.dias{display:grid; grid-template-columns:repeat(7,1fr); gap:3px}
+.dias div{aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-size:.78rem; border-radius:7px}
+.dias .cab{font-size:.64rem; color:var(--suave); font-weight:600; text-transform:uppercase}
+.dias .livre{background:var(--branco); border:1px solid var(--borda)}
+section.alt .dias .livre{background:var(--areia)}
+.dias .ocupado{background:var(--ocupado); color:#fff; font-weight:600}
+.dias .passado{background:var(--areia-2); color:#bdb3a4}
+.dias .vazio{background:none}
+#calendario-aviso{font-size:.9rem; color:var(--suave); padding:12px 0}
+
+/* ---------------- mapa ---------------- */
+.mapa-wrap{border-radius:var(--raio); overflow:hidden; border:1px solid var(--borda); box-shadow:var(--sombra); background:var(--areia-2)}
+.mapa-wrap iframe{width:100%; height:360px; border:0; display:block}
+
+/* ---------------- final ---------------- */
+.final{background:var(--verde); color:#fff; text-align:center; overflow:hidden}
+.final::before{content:''; position:absolute; inset:0; background:url('fotos/03-represa.jpg') center/cover; opacity:.14}
+.final .container{position:relative}
+.final h2{color:#fff}
+.final .rotulo{color:#c8dcb8}
+.final p{opacity:.9; max-width:50ch; margin:12px auto 0}
+.final .botoes{justify-content:center}
+.final .fone{margin-top:26px; font-family:'Fraunces',serif; font-size:1.3rem; color:#fff; text-decoration:none; display:inline-block; opacity:.95}
+
+footer{background:#22391a; color:rgba(255,255,255,.62); padding:42px 0; font-size:.88rem; text-align:center}
+footer img{height:54px; margin:0 auto 16px; filter:brightness(0) invert(1); opacity:.85}
+footer a{color:rgba(255,255,255,.92); text-decoration:none}
+footer .sep{opacity:.4; margin:0 9px}
+
+.flutua{position:fixed; right:18px; bottom:18px; z-index:100; background:#25D366; color:#0b2016; border-radius:999px; padding:14px 22px; font-weight:600; text-decoration:none; display:flex; align-items:center; gap:9px; box-shadow:0 8px 26px rgba(0,0,0,.26); font-size:.95rem; opacity:0; visibility:hidden; transform:translateY(14px); transition:opacity .4s var(--ease), transform .4s var(--ease), visibility .4s}
+.flutua.on{opacity:1; visibility:visible; transform:none}
+@media(max-width:520px){ .flutua span{display:none} .flutua{padding:16px; border-radius:50%} }
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+  .rev{opacity:1; transform:none}
+  .capa .anim, .rolar{opacity:1; transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ícones -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-cama" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18"/><path d="M3 14V7"/><path d="M7 10V8a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2"/></symbol>
+  <symbol id="i-panela" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5Z"/><path d="M20 12h2v3h-2"/><path d="M4 12H2v3h2"/><path d="M9 7c0-1 1-1.5 1-2.5S9 3 9 3"/><path d="M14 7c0-1 1-1.5 1-2.5S14 3 14 3"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/></symbol>
+  <symbol id="i-onda" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><path d="M2 17c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><path d="M2 7c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/></symbol>
+  <symbol id="i-carro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14"/><path d="M4 17v-4l2-5h12l2 5v4"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></symbol>
+  <symbol id="i-pata" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="17" cy="8" r="2"/><path d="M12 11c-2.8 0-5 2-5 4.5S9 20 12 20s5-2 5-4.5S14.8 11 12 11Z"/></symbol>
+  <symbol id="i-acess" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.8"/><path d="M11 8v5h5l3 6"/><path d="M14 13a5 5 0 1 1-5 5"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5"/><path d="M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8Z"/><path d="M12 17v4"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a16 16 0 0 1 20 0"/><path d="M5 12a11 11 0 0 1 14 0"/><path d="M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></symbol>
+  <symbol id="i-folha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-4-11 0-18 4 7 4 14 0 18Z"/><path d="M12 21V6"/></symbol>
+</svg>
+
+<div id="abertura">
+  <img src="fotos/logo.png" alt="Na Casa da Deise">
+  <div class="risco"></div>
+</div>
+
+<nav id="nav">
+  <div class="container nav-in">
+    <a href="#" class="marca">
+      <img src="fotos/logo.png" alt="Na Casa da Deise">
+      <span>Na Casa da Deise</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#fotos">Fotos</a></li>
+      <li><a href="#casa">A casa</a></li>
+      <li><a href="#valores">Valores</a></li>
+      <li><a href="#datas">Datas livres</a></li>
+      <li><a href="#regiao">Localização</a></li>
+      <li><a href="#contato">Reservar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="capa" id="topo">
+  <video class="capa-video" id="capaVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
+  <div class="capa-veu"></div>
+  <div class="container capa-txt">
+    <h1 class="anim a1">Na <em>Casa</em> da Deise</h1>
+    <p class="tag anim a2">Um refúgio à beira da represa, em Rio dos Cedros, para viver dias de descanso, lazer e bons momentos.</p>
+    <div class="selos anim a3" id="capa-selos"></div>
+    <div class="botoes anim a4">
+      <a class="btn btn-zap" id="btn-zap-topo" href="#">Consultar disponibilidade</a>
+      <a class="btn btn-vazio" href="#fotos">Ver as fotos</a>
+    </div>
+  </div>
+  <a href="#intro" class="rolar">role<i></i></a>
+</header>
+
+<section class="intro" id="intro">
+  <div class="container">
+    <svg class="folha rev"><use href="#i-folha"/></svg>
+    <p class="lead rev d1">Uma casa inteira para o seu grupo, com <b>pé na água</b> e vista para o vale.</p>
+    <div class="numeros rev d2" id="numeros"></div>
+  </div>
+</section>
+
+<section id="fotos" class="alt">
+  <div class="container">
+    <div class="rotulo rev">Galeria</div>
+    <h2 class="rev d1">Conheça a casa</h2>
+    <p class="sub rev d1">Clique em qualquer foto para ampliar.</p>
+    <div class="galeria rev d2" id="galeria"></div>
+  </div>
+</section>
+
+<section id="casa">
+  <div class="container">
+    <div class="rotulo rev">A casa</div>
+    <h2 class="rev d1">Tudo o que você encontra</h2>
+    <p class="sub rev d1">Da cozinha com fogão a lenha à rampa para jet ski — a casa está pronta para receber a família inteira.</p>
+    <div class="grade" id="grade-comodidades"></div>
+    <div class="chips rev" id="chips-gerais"></div>
+  </div>
+</section>
+
+<section class="faixa">
+  <div class="container">
+    <div class="faixa-in">
+      <div class="faixa-txt">
+        <div class="rotulo rev">Na beira da água</div>
+        <h2 class="rev d1">Represa a poucos passos da varanda</h2>
+        <p class="rev d2">Acesso próprio à Barragem Rio Bonito, com dois caiaques, pedalinho e rampa exclusiva para quem chega de jet ski. O dia começa na água e termina na área de fogo.</p>
+      </div>
+      <div class="faixa-img rev d2"><img src="fotos/15-caiaques.jpg" alt="Caiaques na represa em frente à casa" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="valores" class="alt">
+  <div class="container">
+    <div class="rotulo rev">Valores</div>
+    <h2 class="rev d1">Quanto custa</h2>
+    <p class="sub rev d1">A casa é alugada por inteiro, para um único grupo.</p>
+    <div class="grade">
+      <div class="cartao rev">
+        <div class="preco-destaque"><strong>R$ 4.800</strong><span>o final de semana</span></div>
+        <p class="nota" style="margin-top:6px">Sexta a domingo, casa inteira, até 24 hóspedes.</p>
+        <table>
+          <thead><tr><th>Período</th><th>Valor</th><th>Observação</th></tr></thead>
+          <tbody id="tab-valores"></tbody>
+        </table>
+      </div>
+      <div class="cartao rev d1">
+        <h3><svg><use href="#i-folha"/></svg>Como funciona a reserva</h3>
+        <ul class="lista linhas rosa" id="lista-reserva"></ul>
+      </div>
+    </div>
+    <div class="grade" style="margin-top:22px">
+      <div class="cartao rev d2">
+        <h3><svg><use href="#i-folha"/></svg>Combinados da casa</h3>
+        <ul class="lista linhas" id="lista-regras"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="datas">
+  <div class="container">
+    <div class="rotulo rev">Agenda</div>
+    <h2 class="rev d1">Datas disponíveis</h2>
+    <p class="sub rev d1">Calendário mantido pela proprietária. Para confirmar uma data, chame no WhatsApp.</p>
+    <div class="legenda rev d1">
+      <span><i class="bolinha b-livre"></i> Disponível</span>
+      <span><i class="bolinha b-ocupado"></i> Reservado</span>
+      <span><i class="bolinha b-passado"></i> Data passada</span>
+    </div>
+    <div id="calendario-aviso"></div>
+    <div id="calendario" class="rev d2"></div>
+  </div>
+</section>
+
+<section id="regiao" class="alt">
+  <div class="container">
+    <div class="rotulo rev">Localização</div>
+    <h2 class="rev d1">Barragem Rio Bonito, Rio dos Cedros</h2>
+    <p class="sub rev d1">No coração do Vale do Itajaí, cercada de mata e água.</p>
+    <div class="grade">
+      <div class="cartao rev">
+        <h3><svg><use href="#i-folha"/></svg>Por perto</h3>
+        <ul class="lista" id="lista-regiao"></ul>
+        <div class="botoes" style="margin-top:26px">
+          <a class="btn btn-verde" id="btn-mapa" href="#" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+      </div>
+      <div class="mapa-wrap rev d1">
+        <iframe id="mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da região"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="final">
+  <div class="container">
+    <div class="rotulo rev">Reservas</div>
+    <h2 class="rev d1">Vamos combinar sua estadia?</h2>
+    <p class="rev d1">Chame no WhatsApp com as datas que você tem em mente. A gente responde rapidinho.</p>
+    <div class="botoes rev d2">
+      <a class="btn btn-zap" id="btn-zap-final" href="#">Falar no WhatsApp</a>
+      <a class="btn btn-vazio" id="btn-insta" href="#" target="_blank" rel="noopener">Ver no Instagram</a>
+    </div>
+    <div class="rev d3"><a class="fone" id="fone" href="#"></a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img src="fotos/logo.png" alt="Na Casa da Deise">
+    <p>Na Casa da Deise <span class="sep">·</span> <span id="rodape-end"></span></p>
+    <p><a id="rodape-insta" href="#" target="_blank" rel="noopener"></a></p>
+  </div>
+</footer>
+
+<a class="flutua" id="btn-flutua" href="#" aria-label="Falar no WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.91-9.91a9.87 9.87 0 0 0-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.98-.32-1.69-.62-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07s.77-2.18 1.04-2.48c.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.25.6.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5l-.45.52c-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.71.81 2.01.96.3.15.5.22.57.35.07.13.07.74-.18 1.43z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  const $  = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
+    ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+  const icone = n => '<svg aria-hidden="true"><use href="#i-'+n+'"/></svg>';
+  const menosMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- contato ---------- */
+  const linkZap = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(CONFIG.whatsappMensagem);
+  const linkInsta = "https://instagram.com/" + CONFIG.instagram;
+  const fmtFone = d => {
+    const m = String(d).match(/^55(\d{2})(\d{5})(\d{4})$/);
+    return m ? `(${m[1]}) ${m[2]}-${m[3]}` : d;
+  };
+
+  ["#btn-zap-topo","#btn-zap-final","#btn-flutua","#fone"].forEach(s => { const e=$(s); if(e) e.href = linkZap; });
+  $("#fone").textContent = fmtFone(CONFIG.whatsapp);
+  $("#btn-insta").href = linkInsta;
+  $("#rodape-insta").href = linkInsta;
+  $("#rodape-insta").textContent = "@" + CONFIG.instagram;
+  $("#rodape-end").textContent = CONFIG.endereco;
+  $("#btn-mapa").href = CONFIG.mapaLink;
+  $("#mapa").src = "https://www.google.com/maps?q=" + encodeURIComponent(CONFIG.mapaBusca) + "&output=embed";
+
+  /* ---------- conteúdo ---------- */
+  $("#capa-selos").innerHTML = CONFIG.selos.map(t => '<span class="selo">'+esc(t)+"</span>").join("");
+
+  $("#numeros").innerHTML = CONFIG.numeros.map(x =>
+    '<div class="num"><strong data-n="'+x.n+'">0</strong><span>'+esc(x.rotulo)+"</span></div>").join("");
+
+  $("#galeria").innerHTML = CONFIG.fotos.map((f,i) =>
+    '<figure data-i="'+i+'"><img src="'+esc(f.arquivo)+'" alt="'+esc(f.legenda)+'" loading="lazy">'+
+    '<figcaption>'+esc(f.legenda)+"</figcaption></figure>").join("");
+
+  $("#grade-comodidades").innerHTML = CONFIG.comodidades.map((c,i) =>
+    '<div class="cartao rev d'+(i%4)+'"><h3>'+icone(c.icone)+esc(c.titulo)+'</h3><ul class="lista">'+
+    c.itens.map(t => "<li>"+esc(t)+"</li>").join("")+"</ul></div>").join("");
+
+  $("#chips-gerais").innerHTML = CONFIG.gerais.map(g =>
+    '<span class="chip">'+icone(g.icone)+esc(g.txt)+"</span>").join("");
+
+  $("#tab-valores").innerHTML = CONFIG.valores.map(v =>
+    "<tr><td>"+esc(v.periodo)+'</td><td class="preco">'+esc(v.valor)+'</td><td class="obs">'+esc(v.obs||"")+"</td></tr>").join("");
+
+  const pl = (sel, arr) => { $(sel).innerHTML = arr.map(t => "<li>"+esc(t)+"</li>").join(""); };
+  pl("#lista-reserva", CONFIG.reserva);
+  pl("#lista-regras", CONFIG.regras);
+  $("#lista-regiao").innerHTML = CONFIG.regiao.map(r =>
+    "<li><strong>"+esc(r.nome)+"</strong> — "+esc(r.desc)+"</li>").join("");
+
+  /* ---------- abertura ---------- */
+  const abrir = () => document.body.classList.add("pronto");
+  const inicio = Date.now();
+  window.addEventListener("load", () => {
+    const espera = Math.max(0, (menosMovimento ? 0 : 1150) - (Date.now() - inicio));
+    setTimeout(abrir, espera);
+  });
+  setTimeout(abrir, 2600); // rede lenta: nunca prende o visitante
+
+  /* ---------- vídeo da capa ---------- */
+  (function(){
+    if (!CONFIG.videoCapa || menosMovimento) return;
+    const con = navigator.connection || {};
+    if (con.saveData || /2g/.test(con.effectiveType || "")) return;
+    const v = $("#capaVideo");
+    v.poster = CONFIG.videoPoster || "";
+    const s = document.createElement("source");
+    s.src = CONFIG.videoCapa; s.type = "video/mp4";
+    v.appendChild(s);
+    v.addEventListener("playing", () => v.classList.add("visivel"), { once:true });
+    v.load();
+    const p = v.play();
+    if (p && p.catch) p.catch(() => {}); // autoplay bloqueado: fica a foto
+  })();
+
+  /* ---------- nav + botão flutuante ---------- */
+  const nav = $("#nav"), flutua = $("#btn-flutua");
+  const aoRolar = () => {
+    const y = window.scrollY;
+    nav.classList.toggle("solida", y > 80);
+    flutua.classList.toggle("on", y > 600);
+  };
+  window.addEventListener("scroll", aoRolar, { passive:true });
+  aoRolar();
+
+  /* ---------- reveal ---------- */
+  const alvos = $$(".rev");
+  if ("IntersectionObserver" in window && !menosMovimento){
+    const io = new IntersectionObserver((es,obs) => {
+      es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("on"); obs.unobserve(e.target); } });
+    }, { rootMargin:"0px 0px -12% 0px", threshold:.08 });
+    alvos.forEach(e => io.observe(e));
+  } else {
+    alvos.forEach(e => e.classList.add("on"));
+  }
+
+  /* ---------- contadores ---------- */
+  (function(){
+    const nums = $$("#numeros strong");
+    if (menosMovimento || !("IntersectionObserver" in window)){
+      nums.forEach(n => n.textContent = n.dataset.n); return;
+    }
+    const io = new IntersectionObserver((es,obs) => {
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        obs.unobserve(e.target);
+        const alvo = +e.target.dataset.n, t0 = performance.now(), dur = 1100;
+        const passo = t => {
+          const k = Math.min(1, (t - t0)/dur);
+          e.target.textContent = Math.round(alvo * (1 - Math.pow(1-k, 3)));
+          if (k < 1) requestAnimationFrame(passo);
+        };
+        requestAnimationFrame(passo);
+      });
+    }, { threshold:.5 });
+    nums.forEach(n => io.observe(n));
+  })();
+
+  /* ---------- lightbox ---------- */
+  const lb = document.createElement("div");
+  lb.id = "lb";
+  lb.innerHTML = '<button class="fechar" aria-label="Fechar">&times;</button>'+
+    '<button class="seta ant" aria-label="Anterior">&#8249;</button>'+
+    '<img alt=""><div class="cap"></div>'+
+    '<button class="seta prox" aria-label="Próxima">&#8250;</button>';
+  document.body.appendChild(lb);
+
+  let atual = 0;
+  function mostrar(i){
+    atual = (i + CONFIG.fotos.length) % CONFIG.fotos.length;
+    const f = CONFIG.fotos[atual], img = lb.querySelector("img");
+    img.style.opacity = 0;
+    const novo = new Image();
+    novo.onload = () => { img.src = f.arquivo; img.alt = f.legenda; img.style.opacity = 1; };
+    novo.src = f.arquivo;
+    if (novo.complete) novo.onload();
+    lb.querySelector(".cap").textContent = f.legenda;
+    lb.classList.add("on");
+    document.body.classList.add("travado");
+  }
+  const fechar = () => { lb.classList.remove("on"); document.body.classList.remove("travado"); };
+
+  $("#galeria").addEventListener("click", e => {
+    const fig = e.target.closest("figure"); if (fig) mostrar(+fig.dataset.i);
+  });
+  lb.querySelector(".fechar").onclick = fechar;
+  lb.querySelector(".ant").onclick  = e => { e.stopPropagation(); mostrar(atual-1); };
+  lb.querySelector(".prox").onclick = e => { e.stopPropagation(); mostrar(atual+1); };
+  lb.addEventListener("click", e => { if (e.target === lb) fechar(); });
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("on")) return;
+    if (e.key === "Escape") fechar();
+    if (e.key === "ArrowLeft") mostrar(atual-1);
+    if (e.key === "ArrowRight") mostrar(atual+1);
+  });
+  // arrastar no celular
+  let x0 = null;
+  lb.addEventListener("touchstart", e => { x0 = e.changedTouches[0].clientX; }, { passive:true });
+  lb.addEventListener("touchend", e => {
+    if (x0 === null) return;
+    const d = e.changedTouches[0].clientX - x0;
+    if (Math.abs(d) > 50) mostrar(atual + (d < 0 ? 1 : -1));
+    x0 = null;
+  }, { passive:true });
+
+  /* ---------- datas ---------- */
+  // Aceita 21/08/2026, 2026-08-21, 8/21/2026 (planilha em inglês) e Date(2026,7,21)
+  function parseData(txt){
+    if (!txt) return null;
+    const s = String(txt).trim();
+    let m = s.match(/^Date\((\d{4}),\s*(\d{1,2}),\s*(\d{1,2})\)/i);
+    if (m) return new Date(+m[1], +m[2], +m[3]);          // mês já vem 0-based
+    m = s.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+    if (m) return new Date(+m[1], +m[2]-1, +m[3]);
+    m = s.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})/);
+    if (m){
+      const a = +m[1], b = +m[2], ano = +m[3];
+      if (a > 12 && b <= 12) return new Date(ano, b-1, a); // dia/mês
+      if (b > 12 && a <= 12) return new Date(ano, a-1, b); // mês/dia
+      return new Date(ano, b-1, a);                        // ambíguo: padrão brasileiro
+    }
+    return null;
+  }
+  const chave = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+
+  function expandir(periodos){
+    const set = new Set();
+    periodos.forEach(p => {
+      const ini = parseData(p.entrada), fim = parseData(p.saida);
+      if (!ini || !fim || fim < ini) return;
+      for (let d = new Date(ini); d < fim; d.setDate(d.getDate()+1)) set.add(chave(d));
+      if (chave(ini) === chave(fim)) set.add(chave(ini));
+    });
+    return set;
+  }
+
+  // divide uma linha de CSV respeitando aspas
+  function corta(linha){
+    const out = []; let cur = "", dentro = false;
+    for (let i = 0; i < linha.length; i++){
+      const c = linha[i];
+      if (c === '"'){
+        if (dentro && linha[i+1] === '"'){ cur += '"'; i++; } else dentro = !dentro;
+      } else if (c === "," && !dentro){ out.push(cur); cur = ""; }
+      else cur += c;
+    }
+    out.push(cur);
+    return out.map(s => s.trim());
+  }
+
+  function lerCSV(texto){
+    const linhas = texto.trim().split(/\r?\n/);
+    if (linhas.length < 2) return [];
+    const cab = corta(linhas[0]).map(c => c.toLowerCase());
+    const iIni = cab.findIndex(c => /entrada|check.?in|in[ií]cio|^de$/.test(c));
+    const iFim = cab.findIndex(c => /sa[ií]da|check.?out|fim|^at[ée]$/.test(c));
+    if (iIni < 0 || iFim < 0) return [];
+    return linhas.slice(1).map(l => { const c = corta(l); return { entrada:c[iIni], saida:c[iFim] }; })
+                 .filter(p => p.entrada && p.saida);
+  }
+
+  const MESES = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+  const SEM = ["D","S","T","Q","Q","S","S"];
+
+  function desenhar(ocupados){
+    const hoje = new Date(); hoje.setHours(0,0,0,0);
+    let html = "";
+    for (let m = 0; m < CONFIG.mesesNoCalendario; m++){
+      const base = new Date(hoje.getFullYear(), hoje.getMonth()+m, 1);
+      const ano = base.getFullYear(), mes = base.getMonth();
+      const dias = new Date(ano, mes+1, 0).getDate();
+      let cel = SEM.map(d => '<div class="cab">'+d+"</div>").join("");
+      cel += '<div class="vazio"></div>'.repeat(base.getDay());
+      for (let d = 1; d <= dias; d++){
+        const data = new Date(ano, mes, d);
+        const cls = data < hoje ? "passado" : ocupados.has(chave(data)) ? "ocupado" : "livre";
+        cel += '<div class="'+cls+'">'+d+"</div>";
+      }
+      html += '<div class="mes"><h4>'+MESES[mes]+" "+ano+'</h4><div class="dias">'+cel+"</div></div>";
+    }
+    $("#calendario").innerHTML = html;
+  }
+
+  const aviso = $("#calendario-aviso");
+  if (CONFIG.planilhaCSV) {
+    aviso.textContent = "Carregando o calendário…";
+    fetch(CONFIG.planilhaCSV)
+      .then(r => { if (!r.ok) throw new Error("http "+r.status); return r.text(); })
+      .then(t => {
+        const p = lerCSV(t);
+        aviso.textContent = "";
+        desenhar(expandir(p.length ? p : CONFIG.ocupadoManual));
+      })
+      .catch(() => {
+        aviso.textContent = "Não foi possível carregar o calendário agora. Confirme as datas pelo WhatsApp.";
+        desenhar(expandir(CONFIG.ocupadoManual));
+      });
+  } else {
+    desenhar(expandir(CONFIG.ocupadoManual));
+  }
+})();
+</script>
+</body>
+</html>
