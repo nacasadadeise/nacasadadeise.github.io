@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Na Casa da Deise — Casa de temporada à beira da represa | Rio dos Cedros, SC</title>
-<meta name="description" content="Casa inteira para até 24 hóspedes na Barragem Rio Bonito, Rio dos Cedros/SC. 6 suítes, área gourmet, sinuca, caiaques e rampa para jet ski. Fotos, valores e datas disponíveis.">
+<meta name="description" content="Casa inteira para até 24 hóspedes na Barragem Rio Bonito, Rio dos Cedros/SC. 6 suítes, área gourmet, sinuca, caiaques e rampa para jet ski. Fotos, estrutura completa e localização.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Na Casa da Deise — Rio dos Cedros, SC">
@@ -113,14 +113,7 @@ const CONFIG = {
     { icone: "wifi",  txt: "Wi-Fi em toda a casa" }
   ],
 
-  valores: [
-    { periodo: "Final de semana", valor: "R$ 5.500", obs: "Sexta a domingo, casa inteira" },
-    { periodo: "Feriados prolongados", valor: "Sob consulta", obs: "Valores diferenciados" }
-  ],
-
   reserva: [
-    "50% do valor no ato da reserva",
-    "50% no dia anterior ao check-in",
     "Check-in na sexta-feira, a partir das 14h",
     "Check-out no domingo, até as 17h"
   ],
@@ -138,14 +131,7 @@ const CONFIG = {
     { nome: "Cachoeiras de Rio dos Cedros", desc: "Várias quedas d'água a poucos minutos de carro" },
     { nome: "Centro de Rio dos Cedros", desc: "Mercados, padarias e restaurantes" },
     { nome: "Timbó e Pomerode", desc: "Cultura germânica, cervejarias e gastronomia por perto" }
-  ],
-
-  /* CALENDÁRIO — planilha "Reservas — Na Casa da Deise" (veja LEIA-ME.md).
-     Só funciona depois que a planilha estiver compartilhada como
-     "Qualquer pessoa com o link — Leitor".                              */
-  planilhaCSV: "https://docs.google.com/spreadsheets/d/1FJf7jB_bBb5aNo71zi-wTfzRE0VRLJYMOZGueqY0Wq8/gviz/tq?tqx=out:csv",
-  ocupadoManual: [],
-  mesesNoCalendario: 8
+  ]
 };
 </script>
 
@@ -161,7 +147,6 @@ const CONFIG = {
   --texto:#2a2823;
   --suave:#6d6559;
   --borda:#e4dbcc;
-  --ocupado:#c2607d;
   --sombra:0 1px 2px rgba(42,40,35,.05), 0 12px 32px rgba(42,40,35,.08);
   --sombra-alta:0 20px 48px rgba(42,40,35,.16);
   --raio:18px;
@@ -332,38 +317,6 @@ section.alt .chip{background:var(--areia)}
   .faixa-img{position:relative; height:260px; margin:0 calc((100vw - min(1120px,92vw)) / -2)}
 }
 
-/* ---------------- valores ---------------- */
-.preco-destaque{display:flex; flex-wrap:wrap; align-items:baseline; gap:12px}
-.preco-destaque strong{font-family:'Fraunces',serif; font-size:clamp(2.3rem,6.5vw,3.2rem); color:var(--verde); line-height:1}
-.preco-destaque span{color:var(--suave)}
-table{width:100%; border-collapse:collapse; font-size:.95rem; margin-top:18px}
-th,td{text-align:left; padding:13px 8px; border-bottom:1px solid var(--borda)}
-th{font-size:.71rem; letter-spacing:.1em; text-transform:uppercase; color:var(--suave); font-weight:600}
-td.preco{font-weight:600; color:var(--verde); white-space:nowrap}
-td.obs{color:var(--suave); font-size:.87rem}
-.nota{font-size:.87rem; color:var(--suave); margin-top:16px}
-
-/* ---------------- calendário ---------------- */
-.legenda{display:flex; flex-wrap:wrap; gap:20px; margin-bottom:28px; font-size:.88rem}
-.legenda span{display:flex; align-items:center; gap:8px}
-.bolinha{width:15px; height:15px; border-radius:5px; display:inline-block}
-.b-livre{background:var(--branco); border:1.5px solid var(--borda)}
-.b-ocupado{background:var(--ocupado)}
-.b-passado{background:var(--areia-2)}
-#calendario{display:grid; grid-template-columns:repeat(auto-fill,minmax(248px,1fr)); gap:22px}
-.mes{background:var(--branco); border:1px solid var(--borda); border-radius:var(--raio); padding:18px; box-shadow:var(--sombra)}
-section.alt .mes{background:var(--areia)}
-.mes h4{margin:0 0 14px; font-size:1rem; text-align:center; text-transform:capitalize; color:var(--verde)}
-.dias{display:grid; grid-template-columns:repeat(7,1fr); gap:3px}
-.dias div{aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-size:.78rem; border-radius:7px}
-.dias .cab{font-size:.64rem; color:var(--suave); font-weight:600; text-transform:uppercase}
-.dias .livre{background:var(--branco); border:1px solid var(--borda)}
-section.alt .dias .livre{background:var(--areia)}
-.dias .ocupado{background:var(--ocupado); color:#fff; font-weight:600}
-.dias .passado{background:var(--areia-2); color:#bdb3a4}
-.dias .vazio{background:none}
-#calendario-aviso{font-size:.9rem; color:var(--suave); padding:12px 0}
-
 /* ---------------- mapa ---------------- */
 .mapa-wrap{border-radius:var(--raio); overflow:hidden; border:1px solid var(--borda); box-shadow:var(--sombra); background:var(--areia-2)}
 .mapa-wrap iframe{width:100%; height:360px; border:0; display:block}
@@ -425,8 +378,6 @@ footer .sep{opacity:.4; margin:0 9px}
     <ul class="nav-links">
       <li><a href="#fotos">Fotos</a></li>
       <li><a href="#casa">A casa</a></li>
-      <li><a href="#valores">Valores</a></li>
-      <li><a href="#datas">Datas livres</a></li>
       <li><a href="#regiao">Localização</a></li>
       <li><a href="#contato">Reservar</a></li>
     </ul>
@@ -488,46 +439,21 @@ footer .sep{opacity:.4; margin:0 9px}
   </div>
 </section>
 
-<section id="valores" class="alt">
+<section id="combinados">
   <div class="container">
-    <div class="rotulo rev">Valores</div>
-    <h2 class="rev d1">Quanto custa</h2>
+    <div class="rotulo rev">Estadia</div>
+    <h2 class="rev d1">Como funciona</h2>
     <p class="sub rev d1">A casa é alugada por inteiro, para um único grupo.</p>
     <div class="grade">
       <div class="cartao rev">
-        <div class="preco-destaque"><strong>R$ 5.500</strong><span>o final de semana</span></div>
-        <p class="nota" style="margin-top:6px">Sexta a domingo, casa inteira, até 24 hóspedes.</p>
-        <table>
-          <thead><tr><th>Período</th><th>Valor</th><th>Observação</th></tr></thead>
-          <tbody id="tab-valores"></tbody>
-        </table>
-      </div>
-      <div class="cartao rev d1">
-        <h3><svg><use href="#i-folha"/></svg>Como funciona a reserva</h3>
+        <h3><svg><use href="#i-folha"/></svg>Chegada e saída</h3>
         <ul class="lista linhas rosa" id="lista-reserva"></ul>
       </div>
-    </div>
-    <div class="grade" style="margin-top:22px">
-      <div class="cartao rev d2">
+      <div class="cartao rev d1">
         <h3><svg><use href="#i-folha"/></svg>Combinados da casa</h3>
         <ul class="lista linhas" id="lista-regras"></ul>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="datas">
-  <div class="container">
-    <div class="rotulo rev">Agenda</div>
-    <h2 class="rev d1">Datas disponíveis</h2>
-    <p class="sub rev d1">Calendário mantido pela proprietária. Para confirmar uma data, chame no WhatsApp.</p>
-    <div class="legenda rev d1">
-      <span><i class="bolinha b-livre"></i> Disponível</span>
-      <span><i class="bolinha b-ocupado"></i> Reservado</span>
-      <span><i class="bolinha b-passado"></i> Data passada</span>
-    </div>
-    <div id="calendario-aviso"></div>
-    <div id="calendario" class="rev d2"></div>
   </div>
 </section>
 
@@ -620,9 +546,6 @@ footer .sep{opacity:.4; margin:0 9px}
 
   $("#chips-gerais").innerHTML = CONFIG.gerais.map(g =>
     '<span class="chip">'+icone(g.icone)+esc(g.txt)+"</span>").join("");
-
-  $("#tab-valores").innerHTML = CONFIG.valores.map(v =>
-    "<tr><td>"+esc(v.periodo)+'</td><td class="preco">'+esc(v.valor)+'</td><td class="obs">'+esc(v.obs||"")+"</td></tr>").join("");
 
   const pl = (sel, arr) => { $(sel).innerHTML = arr.map(t => "<li>"+esc(t)+"</li>").join(""); };
   pl("#lista-reserva", CONFIG.reserva);
@@ -745,101 +668,6 @@ footer .sep{opacity:.4; margin:0 9px}
     x0 = null;
   }, { passive:true });
 
-  /* ---------- datas ---------- */
-  // Aceita 21/08/2026, 2026-08-21, 8/21/2026 (planilha em inglês) e Date(2026,7,21)
-  function parseData(txt){
-    if (!txt) return null;
-    const s = String(txt).trim();
-    let m = s.match(/^Date\((\d{4}),\s*(\d{1,2}),\s*(\d{1,2})\)/i);
-    if (m) return new Date(+m[1], +m[2], +m[3]);          // mês já vem 0-based
-    m = s.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
-    if (m) return new Date(+m[1], +m[2]-1, +m[3]);
-    m = s.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})/);
-    if (m){
-      const a = +m[1], b = +m[2], ano = +m[3];
-      if (a > 12 && b <= 12) return new Date(ano, b-1, a); // dia/mês
-      if (b > 12 && a <= 12) return new Date(ano, a-1, b); // mês/dia
-      return new Date(ano, b-1, a);                        // ambíguo: padrão brasileiro
-    }
-    return null;
-  }
-  const chave = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
-
-  function expandir(periodos){
-    const set = new Set();
-    periodos.forEach(p => {
-      const ini = parseData(p.entrada), fim = parseData(p.saida);
-      if (!ini || !fim || fim < ini) return;
-      for (let d = new Date(ini); d < fim; d.setDate(d.getDate()+1)) set.add(chave(d));
-      if (chave(ini) === chave(fim)) set.add(chave(ini));
-    });
-    return set;
-  }
-
-  // divide uma linha de CSV respeitando aspas
-  function corta(linha){
-    const out = []; let cur = "", dentro = false;
-    for (let i = 0; i < linha.length; i++){
-      const c = linha[i];
-      if (c === '"'){
-        if (dentro && linha[i+1] === '"'){ cur += '"'; i++; } else dentro = !dentro;
-      } else if (c === "," && !dentro){ out.push(cur); cur = ""; }
-      else cur += c;
-    }
-    out.push(cur);
-    return out.map(s => s.trim());
-  }
-
-  function lerCSV(texto){
-    const linhas = texto.trim().split(/\r?\n/);
-    if (linhas.length < 2) return [];
-    const cab = corta(linhas[0]).map(c => c.toLowerCase());
-    const iIni = cab.findIndex(c => /entrada|check.?in|in[ií]cio|^de$/.test(c));
-    const iFim = cab.findIndex(c => /sa[ií]da|check.?out|fim|^at[ée]$/.test(c));
-    if (iIni < 0 || iFim < 0) return [];
-    return linhas.slice(1).map(l => { const c = corta(l); return { entrada:c[iIni], saida:c[iFim] }; })
-                 .filter(p => p.entrada && p.saida);
-  }
-
-  const MESES = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
-  const SEM = ["D","S","T","Q","Q","S","S"];
-
-  function desenhar(ocupados){
-    const hoje = new Date(); hoje.setHours(0,0,0,0);
-    let html = "";
-    for (let m = 0; m < CONFIG.mesesNoCalendario; m++){
-      const base = new Date(hoje.getFullYear(), hoje.getMonth()+m, 1);
-      const ano = base.getFullYear(), mes = base.getMonth();
-      const dias = new Date(ano, mes+1, 0).getDate();
-      let cel = SEM.map(d => '<div class="cab">'+d+"</div>").join("");
-      cel += '<div class="vazio"></div>'.repeat(base.getDay());
-      for (let d = 1; d <= dias; d++){
-        const data = new Date(ano, mes, d);
-        const cls = data < hoje ? "passado" : ocupados.has(chave(data)) ? "ocupado" : "livre";
-        cel += '<div class="'+cls+'">'+d+"</div>";
-      }
-      html += '<div class="mes"><h4>'+MESES[mes]+" "+ano+'</h4><div class="dias">'+cel+"</div></div>";
-    }
-    $("#calendario").innerHTML = html;
-  }
-
-  const aviso = $("#calendario-aviso");
-  if (CONFIG.planilhaCSV) {
-    aviso.textContent = "Carregando o calendário…";
-    fetch(CONFIG.planilhaCSV)
-      .then(r => { if (!r.ok) throw new Error("http "+r.status); return r.text(); })
-      .then(t => {
-        const p = lerCSV(t);
-        aviso.textContent = "";
-        desenhar(expandir(p.length ? p : CONFIG.ocupadoManual));
-      })
-      .catch(() => {
-        aviso.textContent = "Não foi possível carregar o calendário agora. Confirme as datas pelo WhatsApp.";
-        desenhar(expandir(CONFIG.ocupadoManual));
-      });
-  } else {
-    desenhar(expandir(CONFIG.ocupadoManual));
-  }
 })();
 </script>
 </body>
